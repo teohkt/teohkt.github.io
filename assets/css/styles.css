@@ -1,8 +1,7 @@
 :root {
   --main-font: 'Roboto', sans-serif;
-  --header-font: 'Raleway', sans-serif;
   --main-color: #651e3e;
-  --accent-color: #005b96;
+  --accent-color: #084166;
   --font-color: #444a4e;
   --background-color: #f4f4f8;
   --card-color: #feffff;
@@ -49,15 +48,21 @@ a:active {
 
 .navbar {
   background-color: var(--card-color);
+  font-family: var(--main-font);
+  letter-spacing: 0.1em;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  padding-right: 0px;
+  padding-left: 20px;
+  color: var(--accent-color);
 }
 
 .navbar-light .navbar-brand,
-.navbar-light .navbar-nav .nav-link.active {
-  color: var(--main-color);
-}
 .navbar-light .navbar-brand:hover,
-.navbar-light .navbar-brand:focus {
-  color: var(--main-color);
+.navbar-light .navbar-brand:focus,
+.navbar-light .navbar-nav .nav-link.active {
+  color: var(--accent-color);
 }
 
 .navbar-toggler {
@@ -105,10 +110,6 @@ a:active {
   50% {
     border-color: transparent;
   }
-}
-.navbar-light .navbar-nav .nav-link {
-  padding-right: 0px;
-  padding-left: 20px;
 }
 
 .bg1 {
@@ -356,7 +357,7 @@ a:active {
   padding: 0 0 90px 0;
 }
 #contactBody p {
-  font-size: 20px;
+  /* font-size: 16px; */
   margin-top: 18px;
 }
 #contactBody ul {
@@ -370,16 +371,15 @@ a:active {
 #contactBody a {
   color: var(--font-color);
   padding: 5px 20px 5px 0px;
-}
-#contactBody img {
-  margin-right: 10px;
-}
-#contactBody #linkedinicon {
-  height: 22px;
+  font-size: 1rem;
 }
 
 #contactBody a:visited {
   color: var(--font-color);
+}
+
+#contactBody svg {
+  margin-right: 5px;
 }
 
 #msg {
@@ -483,7 +483,7 @@ textarea:focus + label {
 
 .footer {
   height: 3em;
-  background-color: #212529;
+  background-color: var(--accent-color);
   color: white;
 }
 
