@@ -67,12 +67,22 @@ function getDocHeight() {
   )
 }
 
-$(function () {
-  var navMain = $('.navbar-collapse')
-  navMain.on('click', 'a:not([data-toggle])', null, function () {
-    navMain.collapse('hide')
-  })
+//CALLBACK AFTER NAVBAR-COLLAPSE OPEN
+$('#navbarBodyLinks').on('shown.bs.collapse', function () {
+  $(document).bind('click', handler)
 })
+//CALLBACK AFTER NAVBAR-COLLAPSE CLOSE
+$('#navbarBodyLinks').on('hidden.bs.collapse', function () {
+  $(document).unbind('click', handler)
+})
+//THIS IS THE FUNCTION THAT GET FIRED
+var handler = function () {
+  $(document).click(function (event) {
+    if (!$(event.target).hasClass('form-control')) {
+      $('#navbarBodyLinks').collapse('hide')
+    }
+  })
+}
 
 // Unfocus buttons after click
 $(document).ready(function () {
@@ -91,32 +101,6 @@ $('textarea')
     this.style.height = 'auto'
     this.style.height = this.scrollHeight + 'px'
   })
-
-// // Form Control
-// $('form').on('submit', (e) => {
-//   e.preventDefault()
-
-//   const email = $('#email').val().trim()
-//   const name = $('#name').val().trim()
-//   const text = $('#message').val().trim()
-
-//   const data = {
-//     email,
-//     subject,
-//     text,
-//   }
-
-//   $.post('/email', data, function () {
-//     console.log('server recieved our data')
-//   })
-
-//   var alertBox = document.getElementById('msg')
-//   alertBox.setAttribute('style', 'display: inline-block')
-//   setTimeout(function () {
-//     alertBox.setAttribute('style', 'display: none')
-//   }, 3000)
-//   $('.clearFields').val('')
-// })
 
 // Smooth Scrolling
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
