@@ -404,6 +404,8 @@ textarea {
   border: 0;
   border-bottom: 1px solid var(--font-color);
   font-family: inherit;
+  appearance: none;
+  -moz-appearance: none;
   -webkit-appearance: none;
   border-radius: 0;
   padding: 0;
@@ -447,9 +449,16 @@ textarea:placeholder-shown + label {
 }
 
 ::-webkit-input-placeholder,
-::-webkit-textarea-placeholder {
+::-webkit-textarea-placeholder,
+::-moz-placeholder,
+:-ms-input-placeholder,
+:-moz-placeholder {
   opacity: 0;
   transition: inherit;
+}
+
+::placeholder {
+  opacity: 0;
 }
 
 input:focus::-webkit-input-placeholder,
