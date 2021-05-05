@@ -7,30 +7,28 @@ var aboutContainer = document.getElementById('about')
 
 var homeDistance = $('#home').offset().top,
   aboutDistance = $('#about').offset().top,
-  timelineDistance = $('#timeline').offset().top,
   projectDistance = $('#projects').offset().top,
   contactDistance = $('#contact').offset().bottom,
   $window = $(window)
 
 $window.scroll(function () {
-  if ($(window).scrollTop() >= homeDistance) {
-    activeMark(homeTab)
-  }
-  if ($(window).scrollTop() > aboutDistance - screen.height * 0.25) {
-    activeMark(aboutTab)
-  }
-  if ($(window).scrollTop() > projectDistance - screen.height * 0.1) {
-    activeMark(projectsTab)
-  }
-  if ($(window).scrollTop() > timelineDistance - screen.height * 0.1) {
-    activeMark(timelineTab)
-  }
   if ($(window).scrollTop() + $(window).height() == getDocHeight()) {
     activeMark(contactTab)
+  } else if ($(window).scrollTop() > projectDistance - screen.height * 0.1) {
+    activeMark(projectsTab)
+  } else if ($(window).scrollTop() > aboutDistance - screen.height * 0.25) {
+    activeMark(aboutTab)
+  } else if ($(window).scrollTop() >= homeDistance) {
+    activeMark(homeTab)
   }
 })
 
 function activeMark(activeSite) {
+  if (homeTab.classList.contains('active')) {
+    homeTab.classList.remove('active')
+    homeTab.blur()
+    activeSite.classList.add('active')
+  }
   if (aboutTab.classList.contains('active')) {
     aboutTab.classList.remove('active')
     aboutTab.blur()
@@ -41,17 +39,13 @@ function activeMark(activeSite) {
     projectsTab.blur()
     activeSite.classList.add('active')
   }
-  if (timelineTab.classList.contains('active')) {
-    timelineTab.classList.remove('active')
-    timelineTab.blur()
-    activeSite.classList.add('active')
-  }
   if (contactTab.classList.contains('active')) {
     contactTab.classList.remove('active')
     contactTab.blur()
     activeSite.classList.add('active')
   }
   activeSite.classList.add('active')
+
   return false
 }
 
