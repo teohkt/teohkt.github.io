@@ -143,11 +143,11 @@ a:active {
   100% {
     transform: translateY(0);
   }
+  40% {
+    transform: translateY(-30px);
+  }
   60% {
     transform: translateY(-15px);
-  }
-  80% {
-    transform: translateY(-0px);
   }
 }
 
