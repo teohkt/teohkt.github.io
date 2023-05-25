@@ -1,5 +1,5 @@
 :root {
-  --main-font: 'Roboto', sans-serif;
+  --main-font: "Roboto", sans-serif;
   --main-color: #651e3e;
   --accent-color: #084166;
   --font-color: #444a4e;
@@ -117,7 +117,11 @@ a:active {
 
 .bg1 {
   height: 100%;
-  background-image: linear-gradient(to top left, var(--accent-color), var(--main-color));
+  background-image: linear-gradient(
+    to top left,
+    var(--accent-color),
+    var(--main-color)
+  );
 
   /* Create the parallax scrolling effect */
   background-attachment: fixed;
@@ -249,6 +253,12 @@ a:active {
   padding: 150px 0 0 0;
 }
 
+@media (max-width: 767px) {
+  .hidden-mobile {
+    display: none;
+  }
+}
+
 @media (min-width: 768px) {
   .card-deck .card {
     margin-bottom: 25px;
@@ -329,7 +339,7 @@ a:active {
   background: var(--card-color);
   z-index: -1;
   transition: 0.5s;
-  content: '';
+  content: "";
   border-radius: 3px;
 }
 
@@ -532,7 +542,7 @@ textarea:focus + label {
   position: absolute;
   left: 50%;
   top: 0;
-  content: ' ';
+  content: " ";
   display: block;
   width: 1px;
   height: 100%;
@@ -573,7 +583,7 @@ textarea:focus + label {
 
 /* Keeps structure */
 .timeline li::after {
-  content: '';
+  content: "";
   display: block;
   height: 0;
   clear: both;
@@ -584,7 +594,7 @@ textarea:focus + label {
   position: absolute;
   top: 7%;
   right: -9.6%;
-  content: ' ';
+  content: " ";
   display: block;
   width: 12px;
   height: 12px;
@@ -599,7 +609,7 @@ textarea:focus + label {
   position: absolute;
   top: 7%;
   left: -9.6%;
-  content: ' ';
+  content: " ";
   display: block;
   width: 12px;
   height: 12px;
@@ -616,7 +626,7 @@ textarea:focus + label {
     position: absolute;
     top: -11.8px;
     left: 48.8%;
-    content: ' ';
+    content: " ";
     display: block;
   }
 }
